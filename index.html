@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff4fa" />
+    <meta
+      name="description"
+      content="Aroi Boba Studio ระบบจัดการร้านชานมไข่มุกสำหรับเช็กต้นทุน รายได้ ยอดขาย และกำไร"
+    />
+
+    <title>Aroi Boba Studio | ระบบจัดการร้านชานม</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Aroi Boba icon: pearl mark (not emoji / not the Sai Jai icon) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/aroi-boba-pearls-32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/aroi-boba-pearls-64.png?v=2" />
+    <link rel="shortcut icon" href="assets/aroi-boba-pearls.ico?v=2" />
+    <link rel="apple-touch-icon" href="assets/aroi-boba-pearls-180.png?v=2" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="girl-mascot.css" />
+    <link rel="stylesheet" href="pastel-background.css" />
+    <link rel="stylesheet" href="chat-history.css" />
+    <link rel="stylesheet" href="shop-enhancements.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="app-bg-orb orb-a"></div>
+      <div class="app-bg-orb orb-b"></div>
+      <div class="app-bg-orb orb-c"></div>
+
+      <div class="app">
+        <aside class="sidebar">
+          <div class="brand-card">
+            <img
+              class="brand-logo"
+              src="assets/aroi-boba-logo.png"
+              alt="Aroi Boba Shop Studio"
+            />
+            <p class="brand-caption">Sweet management for your bubble tea dream ♡</p>
+          </div>
+
+          <div class="nav-label">WORKSPACE</div>
+
+          <nav id="nav" class="nav-list">
+            <button class="nav-item active" data-page="dashboard">
+              <span class="nav-icon">◫</span>
+              <span>ภาพรวมร้าน</span>
+            </button>
+            <button class="nav-item" data-page="sales">
+              <span class="nav-icon">▣</span>
+              <span>บันทึกยอดขาย</span>
+            </button>
+            <button class="nav-item" data-page="products">
+              <span class="nav-icon">☷</span>
+              <span>เมนูและต้นทุน</span>
+            </button>
+            <button class="nav-item" data-page="inventory">
+              <span class="nav-icon">▤</span>
+              <span>วัตถุดิบและสต็อก</span>
+            </button>
+            <button class="nav-item" data-page="expenses">
+              <span class="nav-icon">◈</span>
+              <span>ค่าใช้จ่าย</span>
+            </button>
+            <button class="nav-item" data-page="reports">
+              <span class="nav-icon">▥</span>
+              <span>รายงาน</span>
+            </button>
+            <button class="nav-item" data-page="assistant">
+              <span class="nav-icon">✦</span>
+              <span>AI Insights</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-bottom">
+            <div class="side-note">
+              <b>Little sips, big dreams</b>
+              <p>ระบบหลังบ้านสำหรับร้านชานมที่ดูน่ารัก แต่ใช้งานจริงได้ครบ</p>
+            </div>
+
+            <button id="exportBtn" class="ghost-btn">↓ สำรองข้อมูล JSON</button>
+
+            <label class="import-label">
+              ↑ นำเข้าข้อมูล
+              <input id="importInput" type="file" accept="application/json" hidden />
+            </label>
+          </div>
+        </aside>
+
+        <main class="main">
+          <header class="topbar">
+            <div class="topbar-title">
+              <div class="eyebrow">AROI BOBA • SHOP STUDIO</div>
+              <h1 id="pageTitle">ภาพรวมร้านค้า</h1>
+              <p class="topbar-subtitle">จัดการต้นทุน ยอดขาย รายได้ และกำไรในที่เดียว</p>
+            </div>
+
+            <div class="top-actions">
+              <span id="todayText" class="today-chip"></span>
+              <button class="primary-btn" id="quickSale">＋ เพิ่มยอดขาย</button>
+            </div>
+          </header>
+
+          <div class="content">
+            <section id="dashboard" class="page active">
+              <div class="hero">
+                <div class="hero-copy">
+                  <div class="hero-kicker">HELLO, AROI BOBA ♡</div>
+                  <h2>
+                    ชงความอร่อยให้เต็มแก้ว<br />
+                    <span class="hero-highlight">จัดการร้านให้ง่ายในทุกวัน ♡</span>
+                  </h2>
+                  <p>
+                    เช็กยอดขาย ต้นทุน วัตถุดิบ และกำไรได้แบบเข้าใจง่าย พร้อมมาสคอตแสนน่ารักที่ช่วยเติมบรรยากาศให้เว็บของร้าน
+                  </p>
+                  <div class="hero-actions">
+                    <button class="hero-button" data-goto="sales">เริ่มบันทึกยอดขาย ↗</button>
+                    <button class="hero-outline-button" data-goto="assistant">
+                      ถาม Boba Buddy ✦
+                    </button>
+                  </div>
+                </div>
+
+                <div class="hero-art hero-art-girl">
+                  <div
+                    class="girl-mascot"
+                    data-girl-mascot
+                    role="img"
+                    aria-label="มาสคอตเด็กผู้หญิงผูกโบว์สีชมพูถือแก้วชานมไข่มุก กะพริบตาและโยกตัวน่ารัก"
+                  >
+                    <div class="girl-mascot__halo" aria-hidden="true"></div>
+
+                    <div class="girl-mascot__stage" aria-hidden="true">
+                      <img
+                        src="assets/girl-normal.webp"
+                        class="girl-mascot__frame is-visible"
+                        data-frame="normal"
+                        alt=""
+                        draggable="false"
+                        fetchpriority="high"
+                      />
+                      <img
+                        src="assets/girl-blink.webp"
+                        class="girl-mascot__frame"
+                        data-frame="blink"
+                        alt=""
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/girl-sway.webp"
+                        class="girl-mascot__frame"
+                        data-frame="sway"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+
+                    <div class="girl-mascot__heart-layer" aria-hidden="true"></div>
+                    <span class="girl-mascot__sparkle sparkle-a" aria-hidden="true">✧</span>
+                    <span class="girl-mascot__sparkle sparkle-b" aria-hidden="true">♡</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stats" id="stats"></div>
+
+              <div class="two-col">
+                <div class="panel">
+                  <div class="panel-head">
+                    <div>
+                      <h3>ยอดขายย้อนหลัง 7 วัน</h3>
+                      <p>รายได้รวมในแต่ละวัน</p>
+                    </div>
+                    <span class="pill">7 DAYS</span>
+                  </div>
+                  <canvas id="salesChart" height="230"></canvas>
+                </div>
+
+                <div class="panel">
+                  <div class="panel-head">
+                    <div>
+                      <h3>เมนูขายดี</h3>
+                      <p>เรียงตามจำนวนแก้วที่ขาย</p>
+                    </div>
+                  </div>
+                  <div id="topProducts"></div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>รายการขายล่าสุด</h3>
+                  <button class="text-btn" data-goto="sales">ดูทั้งหมด →</button>
+                </div>
+                <div id="recentSales"></div>
+              </div>
+            </section>
+
+            <section id="sales" class="page">
+              <div class="section-intro">
+                <h2>บันทึกยอดขาย 🧋</h2>
+                <p>เลือกเครื่องดื่มและจำนวน ระบบคำนวณรายได้และต้นทุนให้อัตโนมัติ</p>
+              </div>
+
+              <div class="two-col sale-layout">
+                <div class="panel">
+                  <h3>เลือกเมนู</h3>
+                  <div class="product-picker" id="productPicker"></div>
+                </div>
+
+                <div class="panel">
+                  <h3>ตะกร้าขาย</h3>
+                  <div id="cartItems" class="cart-items"></div>
+                  <div id="cartTotals" class="cart-totals"></div>
+                  <button id="checkout" class="primary-btn full">ยืนยันการขาย</button>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>ประวัติยอดขาย</h3>
+                  <button class="ghost-btn" id="exportCsv">↓ Export CSV</button>
+                </div>
+                <div id="salesHistory"></div>
+              </div>
+            </section>
+
+            <section id="products" class="page">
+              <div class="section-intro">
+                <h2>เมนูและต้นทุน ✨</h2>
+                <p>คำนวณต้นทุนจากสูตรวัตถุดิบ และตั้งราคาขายได้เอง</p>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>รายการเครื่องดื่ม</h3>
+                  <button class="primary-btn" id="addProduct">＋ เพิ่มเมนู</button>
+                </div>
+                <div id="productsTable"></div>
+              </div>
+            </section>
+
+            <section id="inventory" class="page">
+              <div class="section-intro">
+                <h2>คลังวัตถุดิบ 📦</h2>
+                <p>บันทึกราคาซื้อและจำนวนคงเหลือเพื่อคิดต้นทุนต่อหน่วย</p>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>วัตถุดิบทั้งหมด</h3>
+                  <button class="primary-btn" id="addIngredient">＋ เพิ่มวัตถุดิบ</button>
+                </div>
+                <div id="inventoryTable"></div>
+              </div>
+
+              <div class="tip">
+                หมายเหตุ: การขายจะหักสต็อกตามสูตรที่กำหนดไว้ และไม่อนุญาตให้ขายเกินจำนวนวัตถุดิบที่มี
+              </div>
+            </section>
+
+            <section id="expenses" class="page">
+              <div class="section-intro">
+                <h2>ค่าใช้จ่ายร้าน 💸</h2>
+                <p>เช่น ค่าเช่า ค่าน้ำ ค่าไฟ และค่าใช้จ่ายอื่นที่ไม่รวมในสูตรต่อแก้ว</p>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>รายการค่าใช้จ่าย</h3>
+                  <button class="primary-btn" id="addExpense">＋ บันทึกค่าใช้จ่าย</button>
+                </div>
+                <div id="expenseTable"></div>
+              </div>
+            </section>
+
+            <section id="reports" class="page">
+              <div class="section-intro">
+                <h2>รายงานและวิเคราะห์ 📊</h2>
+                <p>แยกรายได้ ต้นทุนวัตถุดิบ ค่าใช้จ่าย และกำไรโดยประมาณ</p>
+              </div>
+
+              <div class="panel filter-row">
+                <label>
+                  ช่วงเวลา
+                  <select id="reportRange">
+                    <option value="7">7 วันล่าสุด</option>
+                    <option value="30" selected>30 วันล่าสุด</option>
+                    <option value="all">ทั้งหมด</option>
+                  </select>
+                </label>
+                <button id="reportCsv" class="ghost-btn">↓ ดาวน์โหลดรายงาน CSV</button>
+              </div>
+
+              <div class="stats" id="reportStats"></div>
+
+              <div class="panel">
+                <h3>สรุปยอดขายรายเมนู</h3>
+                <div id="reportTable"></div>
+              </div>
+
+              <div class="tip">
+                กำไรที่แสดง = รายได้ − ต้นทุนวัตถุดิบ ณ เวลาขาย − ค่าใช้จ่ายที่บันทึกไว้ในช่วงเวลา ไม่รวมภาษี ค่าแรง หรือรายการที่ไม่ได้บันทึก
+              </div>
+            </section>
+
+            <section id="assistant" class="page">
+              <div class="section-intro">
+                <h2>AI Insights ✦</h2>
+                <p>ผู้ช่วยวิเคราะห์ข้อมูลร้านจากยอดขายและต้นทุนจริงที่บันทึกไว้</p>
+              </div>
+
+              <div class="assistant-layout">
+                <div class="panel ai-card">
+                  <div class="ai-icon">✦</div>
+                  <h2>สวัสดีจาก Boba Buddy!</h2>
+                  <p>ถามเรื่องกำไร ต้นทุน เมนูขายดี หรือขอคำแนะนำเรื่องราคาขายได้เลย</p>
+
+                  <div class="chips">
+                    <button data-question="วันนี้ขายได้เท่าไหร่">วันนี้ขายได้เท่าไหร่?</button>
+                    <button data-question="เมนูไหนขายดีที่สุด">เมนูไหนขายดีที่สุด?</button>
+                    <button data-question="กำไรทั้งหมดเท่าไหร่">กำไรทั้งหมดเท่าไหร่?</button>
+                    <button data-question="ควรปรับราคาขายไหม">ควรปรับราคาขายไหม?</button>
+                  </div>
+
+                  <div class="chat-history-bar">
+                    <div class="chat-history-label">
+                      <span class="chat-history-sparkle">✧</span>
+                      <span>บทสนทนากับ Boba Buddy</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="chat-delete-button"
+                      id="clearChatBtn"
+                      aria-haspopup="dialog"
+                      aria-controls="confirmDialog"
+                    >
+                      <span aria-hidden="true">♲</span>
+                      ลบแชต
+                    </button>
+                  </div>
+
+                  <div id="chatLog" class="chat-log" aria-live="polite">
+                    <div class="chat bot">สวัสดีค่า 🧋 ลองถามเรื่องร้าน Aroi Boba ได้เลยนะ!</div>
+                  </div>
+
+                  <form id="chatForm" class="chat-form">
+                    <input id="chatInput" placeholder="พิมพ์คำถามเกี่ยวกับร้าน..." required />
+                    <button class="primary-btn">ส่ง ↗</button>
+                  </form>
+
+                  <p class="disclaimer">
+                    ผู้ช่วยเวอร์ชันนี้ใช้การวิเคราะห์ตามกฎจากข้อมูลในเครื่อง ไม่ได้เชื่อมต่อโมเดล AI ภายนอก
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="modal" hidden>
+      <div class="modal">
+        <div class="modal-head">
+          <h3 id="modalTitle"></h3>
+          <button id="closeModal" aria-label="ปิด">✕</button>
+        </div>
+
+        <form id="modalForm">
+          <div id="modalFields"></div>
+          <div class="modal-actions">
+            <button type="button" class="ghost-btn" id="cancelModal">ยกเลิก</button>
+            <button type="submit" class="primary-btn">บันทึกข้อมูล</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="confirmOverlay" class="confirm-overlay" hidden>
+      <section
+        id="confirmDialog"
+        class="confirm-dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="confirmTitle"
+        aria-describedby="confirmMessage"
+        tabindex="-1"
+      >
+        <button
+          type="button"
+          class="confirm-close"
+          id="confirmClose"
+          aria-label="ปิดหน้าต่าง"
+        >
+          ×
+        </button>
+
+        <div class="confirm-illustration" id="confirmIllustration" aria-hidden="true">
+          <span>🧋</span>
+          <span class="confirm-mini-heart">♡</span>
+        </div>
+
+        <div class="confirm-kicker" id="confirmKicker">AROI BOBA • LITTLE REMINDER</div>
+        <h2 id="confirmTitle">ยืนยันรายการ</h2>
+        <p id="confirmMessage"></p>
+        <div id="confirmDetails" class="confirm-details" hidden></div>
+
+        <div class="confirm-buttons">
+          <button type="button" id="confirmCancel" class="confirm-cancel">ยังไม่ลบ</button>
+          <button type="button" id="confirmAccept" class="confirm-accept">ยืนยัน</button>
+        </div>
+
+        <span class="confirm-footnote">✦ Aroi Boba ดูแลข้อมูลร้านของคุณ ♡</span>
+      </section>
+    </div>
+
+    <div id="toast" role="status"></div>
+
+    <script src="app.js"></script>
+    <script src="girl-mascot.js"></script>
+  </body>
+</html>

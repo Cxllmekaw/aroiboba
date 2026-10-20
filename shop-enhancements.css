@@ -1,0 +1,45 @@
+/* Premium pastel style, animated 3-frame girl and consistent non-native confirmation popups */
+:root{--confirm-rose:#d786ad;--confirm-lavender:#bf98d7}
+body.dialog-open{overflow:hidden}
+.brand strong{font-weight:800;font-size:24px}
+.hero{min-height:330px;padding:35px 42px;gap:20px;overflow:hidden}
+.hero>div:first-child{flex:1;min-width:0}
+.hero h2{font-size:clamp(24px,2.6vw,39px);letter-spacing:-.5px;line-height:1.5}
+.hero h2 .hero-highlight{color:#d884b1}
+.hero p{font-size:13px;line-height:1.95;max-width:365px}
+.hero-kicker{font-size:10px;letter-spacing:2.2px;background:#ffffffaf;display:inline-flex;border-radius:999px;padding:8px 12px}
+.hero-art-girl{filter:none}
+.hero::after{right:42%;bottom:14%;font-size:18px}
+.ai-icon{background:linear-gradient(130deg,#ffdaeb,#edd8ff);color:#ae6fa8}
+.chat-log{background:linear-gradient(145deg,#fffafc,#fdf5ff);border-color:#f4dfea}
+.chat.bot{background:#f9eafa;color:#805c79;border-radius:16px 16px 16px 4px}
+.chat.user{background:linear-gradient(125deg,#eba3c9,#bf96db);border-radius:16px 16px 4px 16px;color:white}
+.modal{border:1px solid #fff;background:linear-gradient(145deg,#fffefd,#fff7fc);box-shadow:0 30px 80px #ae80a84d}
+.modal-backdrop{backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);background:#64496263}
+#toast{background:linear-gradient(120deg,#90627e,#745b8d);border:1px solid #ffffff60;box-shadow:0 12px 38px #7f496b46;border-radius:16px;max-width:min(450px,calc(100vw - 28px));padding:13px 18px;font-size:12px}
+.confirm-overlay[hidden]{display:none!important}
+.confirm-overlay{position:fixed;inset:0;z-index:250;display:grid;place-items:center;padding:20px;background:#674d6780;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);animation:confirm-fade .22s ease-out}
+.confirm-dialog{position:relative;width:min(460px,100%);max-height:calc(100dvh - 35px);overflow:auto;text-align:center;background:linear-gradient(148deg,#fffdfd,#fff3fa 55%,#f4ecff);border:1px solid #fff;border-radius:31px;padding:32px 31px 27px;box-shadow:0 35px 90px #644b7860;animation:confirm-pop .28s cubic-bezier(.2,1.1,.42,1)}
+.confirm-close{position:absolute;right:17px;top:16px;display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:50%;background:#ffffffb8;color:#a7809c;font-size:24px;line-height:1}
+.confirm-illustration{position:relative;width:86px;height:86px;border-radius:29px;background:linear-gradient(137deg,#ffd9e8,#e9ddfc);border:5px solid white;box-shadow:0 12px 26px #d6acd14f;display:grid;place-items:center;margin:0 auto 14px;font-size:37px}
+.confirm-mini-heart{position:absolute;right:-12px;top:-11px;color:#ef95b8;font-size:29px;text-shadow:0 1px white,1px 0 white}
+.confirm-kicker{font:700 9px Outfit,sans-serif;letter-spacing:2.2px;color:#d29abc;margin-bottom:12px}
+.confirm-dialog h2{font-size:21px;line-height:1.55;margin:0 0 10px;color:#7e5575;letter-spacing:-.2px}
+.confirm-dialog p{font-size:12px;line-height:2;color:#968397;margin:0 0 18px}
+.confirm-details{background:#ffffffc9;border:1px solid #f1e0ed;border-radius:16px;margin:0 0 19px;padding:9px 15px;max-height:220px;overflow:auto;text-align:left}
+.confirm-details[hidden]{display:none}
+.confirm-detail-row{color:#88677d;padding:8px 2px;font-size:12px;line-height:1.5;border-bottom:1px dashed #f3deea;overflow-wrap:anywhere}
+.confirm-detail-row:last-child{border:0}
+.confirm-buttons{display:flex;gap:10px}
+.confirm-buttons button{flex:1;min-width:0;border-radius:14px;padding:12px 9px;font-size:12px;font-family:Prompt,sans-serif;font-weight:600;transition:transform .18s,box-shadow .18s;cursor:pointer}
+.confirm-buttons button:hover{transform:translateY(-2px)}
+.confirm-cancel{background:white;color:#99738c;border:1px solid #eed5e5;box-shadow:0 5px 15px #d9afc523}
+.confirm-accept{border:0;color:white;background:linear-gradient(120deg,#ec9dbe,#ba93d7);box-shadow:0 8px 22px #c484b54a}
+.confirm-accept.confirm-accept--safe{background:linear-gradient(120deg,#de94c0,#a995e1)}
+.confirm-footnote{display:block;margin-top:20px;font-size:10px;color:#bfa5b7}
+.confirm-buttons button:focus-visible,.confirm-close:focus-visible{outline:3px solid #b894dd;outline-offset:3px}
+@keyframes confirm-fade{from{opacity:0}to{opacity:1}}
+@keyframes confirm-pop{from{transform:translateY(14px) scale(.95);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+@media(max-width:760px){.hero{padding:26px 21px}.hero p{font-size:12px}}
+@media(max-width:540px){.hero h2{font-size:24px}.hero p{max-width:none;margin:0 auto 14px}.hero::after{display:none}.confirm-dialog{padding:28px 20px 22px;border-radius:26px}}
+@media(prefers-reduced-motion:reduce){.confirm-overlay,.confirm-dialog{animation:none!important}.confirm-buttons button{transition:none}}

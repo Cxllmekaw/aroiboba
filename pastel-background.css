@@ -1,0 +1,101 @@
+/* AROI BOBA • Dreamy Milk-Tea Pink — layered over the original style.css */
+:root {
+  --ink: #614b5f;
+  --muted: #958397;
+  --brown: #a65c86;
+  --cream: #fffafc;
+  --peach: #ffe4e7;
+  --pink: #f9bcd6;
+  --line: #f4e4ef;
+  --green: #408e70;
+  --red: #c95d73;
+  --shadow: 0 14px 38px rgba(149, 104, 151, .085);
+}
+html { min-height:100%; }
+body {
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse 35% 34% at 78% 6%, rgba(222,197,255,.62), transparent 75%),
+    radial-gradient(ellipse 35% 33% at 19% 27%, rgba(255,207,222,.68), transparent 75%),
+    radial-gradient(ellipse 32% 34% at 88% 72%, rgba(251,211,233,.52), transparent 75%),
+    radial-gradient(ellipse 43% 38% at 10% 91%, rgba(251,229,202,.48), transparent 80%),
+    linear-gradient(120deg,#fff9f8 0%,#fff7fb 47%,#f9f3ff 100%);
+  background-attachment:fixed;
+}
+/* Transparent decorative circles follow the viewport, avoiding blocking interaction. */
+body::before, body::after {
+  content:""; position:fixed; border-radius:50%; pointer-events:none; z-index:0;
+  border:1px solid rgba(255,255,255,.65);
+  box-shadow:0 0 80px rgba(249,210,231,.22);
+}
+body::before {width:240px;height:240px;top:12%;right:5%;background:rgba(255,255,255,.24);animation:backgroundFloat 17s ease-in-out infinite alternate;}
+body::after {width:145px;height:145px;bottom:9%;left:6%;background:rgba(255,255,255,.23);animation:backgroundFloat 14s ease-in-out -5s infinite alternate-reverse;}
+@keyframes backgroundFloat{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-22px,0)}}
+.app {isolation:isolate;position:relative;z-index:1}
+.sidebar{
+ background:rgba(255,252,254,.91); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+ border-right:1px solid rgba(244,221,235,.85);
+ box-shadow:8px 0 30px rgba(183,139,178,.045);
+}
+.brand-icon{background:linear-gradient(145deg,#ffd2e3,#e8d8ff);box-shadow:0 8px 19px #de9fc336}
+.brand strong{background:linear-gradient(115deg,#a45282,#d989af);background-clip:text;-webkit-background-clip:text;color:transparent}
+.brand small{color:#c694bb}
+.nav-label,.eyebrow{color:#c592b5}
+.nav-item{color:#988499;transition:background .2s,transform .2s,color .2s}
+.nav-item:hover,.nav-item.active{background:linear-gradient(110deg,#ffe4ef,#f2e8ff);color:#a45283}
+.nav-item:hover{transform:translateX(3px)}
+.side-note{background:linear-gradient(140deg,#ffe9f1,#f0e8ff);border:1px solid #f8e0ef}
+.side-note p{color:#9a7a93}
+.topbar{background:rgba(255,251,254,.76);backdrop-filter:blur(20px);border-bottom:1px solid rgba(243,225,240,.94)}
+.topbar h1,.section-intro h2,.panel h3{color:#644965}
+.primary-btn{background:linear-gradient(125deg,#e79bbd,#c28edf);color:#fff;box-shadow:0 8px 21px rgba(207,145,195,.25);transition:transform .2s,box-shadow .2s,filter .2s}
+.primary-btn:hover{background:linear-gradient(125deg,#df8ab2,#b97bd9);transform:translateY(-2px);box-shadow:0 10px 26px rgba(193,132,185,.30)}
+.content{position:relative}
+/* Dreamy main banner with gentle, translucent circles */
+.hero{
+ min-height:295px;
+ background:linear-gradient(112deg,#fff1f1 0%,#ffedf5 44%,#f1e8ff 100%);
+ border:1px solid rgba(255,255,255,.9); box-shadow:0 16px 48px rgba(207,158,202,.15);
+ border-radius:32px;
+}
+.hero::before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:4%;top:-42%;background:rgba(255,255,255,.37);pointer-events:none}
+.hero::after{content:"✦  ˚  ♡  ✧";position:absolute;right:6%;bottom:6%;font-size:24px;letter-spacing:10px;color:#e1b1db;opacity:.72;animation:twinkle 5s ease-in-out infinite;pointer-events:none}
+@keyframes twinkle{0%,100%{opacity:.45}50%{opacity:1}}
+.hero>div{position:relative;z-index:1}
+.hero-kicker{color:#cf86ab;letter-spacing:2.8px}
+.hero h2{color:#73516b;font-size:clamp(22px,2.5vw,35px);line-height:1.48}
+.hero h2::first-line{color:#74526d}
+.hero p{color:#9c7d98}
+.hero-button{background:#fff9ff;color:#ad6695;border:1px solid rgba(237,197,226,.7);box-shadow:0 7px 21px #d79ec333;transition:transform .2s}
+.hero-button:hover{transform:translateY(-3px)}
+.hero-art-mascot{filter:drop-shadow(0 18px 27px #dbabd23d)}
+.stat,.panel{
+ background:rgba(255,255,255,.86);
+ border:1px solid rgba(245,227,241,.91);
+ box-shadow:var(--shadow);
+ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.stat{border-radius:22px;transition:transform .22s,box-shadow .22s}
+.stat:hover{transform:translateY(-3px);box-shadow:0 17px 35px #d6acc12c}
+.stat-icon,.rank-icon,.drink-emoji{background:linear-gradient(135deg,#ffe5ef,#f3e9ff)}
+.stat-value{color:#75506c}
+.panel{border-radius:23px}
+.pill,.mini-btn,.chips button,.tip{background:#fceaf3;color:#a86b90}
+.bar{background:#f8eaf3}
+.bar-fill{background:linear-gradient(90deg,#e6a2c8,#c59ee6)}
+.ghost-btn,.import-label{background:#fffbfe;border-color:#f0dce9;color:#9c678b}
+.ghost-btn:hover,.import-label:hover{background:#fff0f8}
+select,input{border-color:#ecdce9}
+select:focus,input:focus{border-color:#dca2d2;box-shadow:0 0 0 3px #f7e2f2}
+.pick{background:#fffafd;border-color:#f4e1ef}
+.pick:hover{background:#fff0f8;border-color:#e7a4c9}
+.chat-log{background:#fffbfe}.chat.bot{background:#fbeafa}.chat.user{background:#c58ab6}
+#toast{background:#76516d}
+@media(max-width:760px){
+ body::before{width:140px;height:140px}body::after{width:100px;height:100px}
+ .sidebar{background:rgba(255,252,254,.96)}
+ .hero{border-radius:25px;padding:23px;min-height:240px}
+ .hero::after{right:1%;bottom:4%;font-size:15px}
+ .hero h2{font-size:clamp(19px,5vw,25px)}
+}
+@media(prefers-reduced-motion:reduce){body::before,body::after,.hero::after{animation:none}.primary-btn,.stat,.nav-item,.hero-button{transition:none}}

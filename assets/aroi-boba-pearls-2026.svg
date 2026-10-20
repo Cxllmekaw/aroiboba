@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFE2EF"/>
+      <stop offset="0.53" stop-color="#F7DBED"/>
+      <stop offset="1" stop-color="#DDD0F7"/>
+    </linearGradient>
+    <linearGradient id="pearl" x1="0" x2=".9" y1="0" y2="1">
+      <stop offset="0" stop-color="#88566C"/>
+      <stop offset=".34" stop-color="#513044"/>
+      <stop offset="1" stop-color="#2A1C2C"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" x2=".7" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".93"/>
+      <stop offset="1" stop-color="#FFF4FC" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+  <rect x="7" y="7" width="242" height="242" rx="63" fill="url(#bg)"/>
+  <rect x="9" y="9" width="238" height="238" rx="61" fill="none" stroke="#FFF7FC" stroke-width="5" opacity=".75"/>
+  <circle cx="126" cy="132" r="103" fill="#FFF8FC" opacity=".32"/>
+  <!-- Three recognizable tapioca pearls, not an emoji illustration. -->
+  <g stroke="#3E2735" stroke-width="3.5">
+    <circle cx="126" cy="85" r="37" fill="url(#pearl)"/>
+    <circle cx="89" cy="158" r="37" fill="url(#pearl)"/>
+    <circle cx="163" cy="158" r="37" fill="url(#pearl)"/>
+  </g>
+  <g fill="url(#shine)">
+    <ellipse cx="112" cy="69" rx="12" ry="6" transform="rotate(-35 112 69)"/>
+    <ellipse cx="75" cy="142" rx="11" ry="6" transform="rotate(-35 75 142)"/>
+    <ellipse cx="149" cy="142" rx="11" ry="6" transform="rotate(-35 149 142)"/>
+  </g>
+  <g fill="#DB9AB5" opacity=".8">
+    <circle cx="145" cy="106" r="5"/>
+    <circle cx="108" cy="179" r="5"/>
+    <circle cx="183" cy="179" r="4"/>
+  </g>
+</svg>
